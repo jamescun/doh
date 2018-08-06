@@ -1,7 +1,6 @@
 package doh
 
 import (
-	"encoding/json"
 	"fmt"
 	"net"
 	"net/http"
@@ -88,7 +87,7 @@ func (c *Client) Do(q *Question) (res *Answer, rtt time.Duration, err error) {
 	if w.StatusCode == http.StatusOK {
 		var x Answer
 
-		err = json.NewDecoder(w.Body).Decode(&x)
+		err = unmarshalJSON(w.Body, &x)
 		if err != nil {
 			return
 		}

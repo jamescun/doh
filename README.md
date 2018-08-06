@@ -15,6 +15,8 @@ go get -u github.com/jamescun/doh
 
 ## Libraries
 
+Note about [easyjson](https://github.com/mailru/easyjson): by default doh will use `encoding/json`, however easyjson is supported by using the `easyjson` build tag.
+
 ## Client
 
 This package directly exposes a client configured to connect to Google's Public DNS:

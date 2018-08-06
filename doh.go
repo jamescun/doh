@@ -235,6 +235,8 @@ func (rr RecordType) String() string {
 }
 
 // Record is a single DNS record that is returned as part of an Answer.
+//
+//easyjson:json
 type Record struct {
 	Name string     `json:"name"`
 	Type RecordType `json:"type"`
@@ -247,6 +249,8 @@ type Records []*Record
 
 // Question contains the incoming request to a server, or the outgoing request
 // to a client. Only the Name field is required.
+//
+//easyjson:json
 type Question struct {
 	// Name is the hostname to request from the upstream server. It MAY be
 	// fully qualified.
@@ -309,6 +313,8 @@ func (r Question) Values() url.Values {
 
 // Answer is the full response to be returned to the client in
 // response to a Request.
+//
+//easyjson:json
 type Answer struct {
 	// Status is the DNS Response Code (RCODE) as defined by IANA
 	// https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6

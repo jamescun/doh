@@ -1,7 +1,6 @@
 package doh
 
 import (
-	"encoding/json"
 	"net/http"
 	"strings"
 )
@@ -58,5 +57,5 @@ func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	json.NewEncoder(w).Encode(res)
+	marshalJSON(w, res)
 }
